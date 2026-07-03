@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mother's Pride Montessori School | Gramin Road, Lahan</title>
+<meta name="description" content="Mother's Pride Montessori School — a Montessori-method school for Toddler, Primary and Elementary learners on Gramin Road, Lahan.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #1F3D30;
+    --forest-deep: #16291F;
+    --paper: #FBF7EE;
+    --paper-soft: #F3EDDF;
+    --ink: #26261F;
+    --ochre: #E3A335;
+    --terracotta: #C15A34;
+    --blue: #3C6E93;
+    --line: #E0D8C2;
+    --radius: 18px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Figtree', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0 0 .4em 0;
+    line-height:1.15;
+    letter-spacing:-0.01em;
+  }
+  p{margin:0 0 1em 0;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  .eyebrow{
+    font-family:'Figtree',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.75rem;
+    font-weight:700;
+    color:var(--terracotta);
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px;height:2px;
+    background:var(--terracotta);
+    display:inline-block;
+  }
+  section{padding:96px 0;}
+  @media(max-width:720px){section{padding:64px 0;}}
+
+  /* ---------- Skip link / focus ---------- */
+  a:focus-visible, button:focus-visible{
+    outline:3px solid var(--blue);
+    outline-offset:3px;
+  }
+  .skip-link{
+    position:absolute; left:-999px; top:0;
+    background:var(--forest); color:#fff; padding:10px 16px; z-index:999;
+    border-radius:0 0 8px 0;
+  }
+  .skip-link:focus{left:0;}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:100;
+    background:rgba(251,247,238,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px;
+    max-width:1160px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .brand svg{width:40px;height:40px;flex-shrink:0;}
+  .brand img, .footer-brand img{
+    background:#fff; border-radius:50%; padding:4px; box-shadow:0 0 0 1px var(--line);
+    object-fit:contain;
+  }
+  .brand-text{font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; color:var(--forest); line-height:1.15;}
+  .brand-text span{display:block; font-family:'Figtree',sans-serif; font-weight:600; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--terracotta); margin-top:2px;}
+  nav.links{display:flex; gap:32px; align-items:center;}
+  nav.links a{
+    text-decoration:none; font-weight:600; font-size:.92rem; color:var(--ink);
+    position:relative; padding:4px 0;
+  }
+  nav.links a::after{
+    content:""; position:absolute; left:0; bottom:-2px; width:0; height:2px;
+    background:var(--terracotta); transition:width .25s ease;
+  }
+  nav.links a:hover::after, nav.links a:focus-visible::after{width:100%;}
+  .nav-cta{
+    background:var(--forest); color:#fff !important; padding:10px 20px;
+    border-radius:100px; font-size:.85rem !important; font-weight:700 !important;
+  }
+  .nav-cta::after{display:none;}
+  .nav-toggle{
+    display:none; background:none; border:none; cursor:pointer; padding:6px;
+  }
+  .nav-toggle svg{width:26px;height:26px;color:var(--forest);}
+  @media(max-width:860px){
+    nav.links{
+      position:fixed; inset:64px 0 auto 0; background:var(--paper);
+      flex-direction:column; align-items:flex-start; gap:0;
+      padding:8px 28px 20px; border-bottom:1px solid var(--line);
+      transform:translateY(-8px); opacity:0; pointer-events:none;
+      transition:all .2s ease;
+    }
+    nav.links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+    nav.links a{width:100%; padding:14px 0; border-bottom:1px solid var(--line);}
+    nav.links a::after{display:none;}
+    .nav-cta{margin-top:12px; text-align:center;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:radial-gradient(120% 140% at 15% 0%, #274A3A 0%, var(--forest) 45%, var(--forest-deep) 100%);
+    color:var(--paper);
+    padding:80px 0 100px;
+    overflow:hidden;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;
+  }
+  .hero .eyebrow{color:var(--ochre);}
+  .hero .eyebrow::before{background:var(--ochre);}
+  .hero h1{
+    font-size:clamp(2.3rem, 4.6vw, 3.6rem);
+    color:#fff;
+    margin-top:.3em;
+  }
+  .hero h1 em{color:var(--ochre); font-style:normal;}
+  .hero p.lead{
+    font-size:1.1rem; color:#E7E1D0; max-width:46ch;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:28px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:14px 26px; border-radius:100px;
+    font-weight:700; font-size:.95rem; text-decoration:none;
+    border:2px solid transparent; cursor:pointer;
+    transition:transform .18s ease, background .18s ease, border-color .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--ochre); color:var(--forest-deep);}
+  .btn-primary:hover{background:#EEB456;}
+  .btn-ghost{border-color:rgba(255,255,255,.4); color:#fff;}
+  .btn-ghost:hover{border-color:#fff; background:rgba(255,255,255,.08);}
+  .hero-stats{display:flex; gap:32px; margin-top:44px; flex-wrap:wrap;}
+  .hero-stats div strong{display:block; font-family:'Fraunces',serif; font-size:1.7rem; color:var(--ochre);}
+  .hero-stats div span{font-size:.82rem; color:#C9C2AC;}
+
+  /* Signature: growth-stage stacked blocks illustration */
+  .blocks-wrap{position:relative; display:flex; justify-content:center;}
+  .blocks-wrap svg{width:100%; max-width:340px; height:auto;}
+  .building-frame{
+    position:relative; width:100%; max-width:400px;
+    border-radius:var(--radius); overflow:hidden;
+    border:4px solid rgba(255,255,255,.15);
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+  }
+  .building-frame img{width:100%; height:100%; object-fit:cover; display:block;}
+  .building-badge{
+    position:absolute; bottom:16px; left:20px; right:20px;
+    background:rgba(15,32,24,.75); backdrop-filter:blur(4px);
+    border-radius:12px; padding:10px 14px;
+    color:#fff; font-size:.8rem; font-weight:700;
+    display:flex; align-items:center; gap:8px;
+  }
+  .building-badge::before{content:"📍"; font-size:.9rem;}
+  .float{animation:floaty 6s ease-in-out infinite;}
+  @keyframes floaty{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-10px);}
+  }
+  @media(max-width:860px){
+    .hero .wrap{grid-template-columns:1fr; text-align:left;}
+    .hero-stats{gap:24px;}
+    .blocks-wrap{margin-top:20px; max-width:340px; margin-left:auto; margin-right:auto;}
+  }
+
+  /* ---------- Marquee strip ---------- */
+  .strip{
+    background:var(--paper-soft); border-bottom:1px solid var(--line); border-top:1px solid var(--line);
+    padding:18px 0;
+  }
+  .strip .wrap{
+    display:flex; gap:40px; justify-content:center; flex-wrap:wrap;
+    font-size:.85rem; font-weight:600; color:var(--forest); letter-spacing:.02em;
+  }
+  .strip .wrap span{display:flex; align-items:center; gap:8px;}
+  .strip .wrap span::before{content:"●"; color:var(--terracotta); font-size:.5rem;}
+
+  /* ---------- About ---------- */
+  .about .wrap{display:grid; grid-template-columns:.85fr 1.15fr; gap:64px; align-items:start;}
+  .about h2{font-size:clamp(1.8rem,3vw,2.5rem);}
+  .about-quote{
+    border-left:3px solid var(--ochre); padding-left:20px; margin-top:24px;
+    font-family:'Fraunces',serif; font-size:1.15rem; color:var(--forest); font-style:italic;
+  }
+  @media(max-width:860px){.about .wrap{grid-template-columns:1fr;}}
+
+  /* ---------- Pillars (Montessori method) ---------- */
+  .pillars{background:var(--forest); color:var(--paper);}
+  .pillars .section-head{max-width:640px; margin-bottom:56px;}
+  .pillars .eyebrow{color:var(--ochre);}
+  .pillars .eyebrow::before{background:var(--ochre);}
+  .pillars h2{color:#fff;}
+  .pillar-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .pillar-card{
+    background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius); padding:30px;
+  }
+  .pillar-card .icon{width:44px;height:44px; margin-bottom:18px;}
+  .pillar-card h3{color:#fff; font-size:1.15rem;}
+  .pillar-card p{color:#CFC8B2; font-size:.94rem; margin:0;}
+  @media(max-width:860px){.pillar-grid{grid-template-columns:1fr;}}
+
+  /* ---------- Programs (sequential stages) ---------- */
+  .programs .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .program-track{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:0;
+    border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;
+  }
+  .program-card{
+    padding:36px 30px; background:var(--paper); border-right:1px solid var(--line);
+    position:relative;
+  }
+  .program-card:last-child{border-right:none;}
+  .program-card .stage-num{
+    font-family:'Fraunces',serif; font-size:.85rem; font-weight:700;
+    color:var(--terracotta); letter-spacing:.06em; text-transform:uppercase;
+  }
+  .program-card h3{margin-top:.5em; font-size:1.3rem;}
+  .program-card .age{
+    display:inline-block; background:var(--paper-soft); border:1px solid var(--line);
+    border-radius:100px; padding:4px 14px; font-size:.8rem; font-weight:700; color:var(--forest);
+    margin:10px 0 14px;
+  }
+  .program-card p{font-size:.93rem; color:#5C5A4E; margin:0;}
+  .stage-block{width:100%; height:8px; border-radius:4px; margin-top:22px;}
+  @media(max-width:860px){
+    .program-track{grid-template-columns:1fr;}
+    .program-card{border-right:none; border-bottom:1px solid var(--line);}
+  }
+
+  /* ---------- Day in the life / gallery (illustrated, no stock photos) ---------- */
+  .gallery{background:var(--paper-soft);}
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:18px;
+  }
+  .gallery-card{
+    aspect-ratio:1/1; border-radius:var(--radius); display:flex; flex-direction:column;
+    justify-content:flex-end; padding:18px; color:#fff; position:relative; overflow:hidden;
+  }
+  .gallery-card svg{position:absolute; top:20px; left:20px; width:34px; height:34px; opacity:.9;}
+  .gallery-card span{font-weight:700; font-size:.92rem; position:relative;}
+  @media(max-width:860px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* ---------- Why families choose us ---------- */
+  .why .wrap{display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+  .why-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:22px;}
+  .why-list li{display:flex; gap:16px; align-items:flex-start;}
+  .why-list .num{
+    font-family:'Fraunces',serif; font-weight:700; color:var(--terracotta);
+    font-size:1.1rem; flex-shrink:0;
+  }
+  .why-list h4{margin:0 0 4px; font-size:1.05rem;}
+  .why-list p{margin:0; font-size:.92rem; color:#5C5A4E;}
+  .why-panel{
+    background:var(--forest); border-radius:var(--radius); padding:40px;
+    color:var(--paper);
+  }
+  .why-panel h3{color:#fff; font-size:1.4rem;}
+  .why-panel p{color:#CFC8B2;}
+  @media(max-width:860px){.why .wrap{grid-template-columns:1fr;}}
+
+  /* ---------- Team ---------- */
+  .team{background:var(--paper);}
+  .team .section-head{max-width:640px; margin:0 auto 56px; text-align:center;}
+  .team-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:28px;}
+  .team-card{
+    background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px 22px; text-align:center;
+  }
+  .team-avatar{
+    width:96px; height:96px; border-radius:50%; margin:0 auto 18px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.7rem; color:#fff;
+    border:3px solid var(--paper);
+    box-shadow:0 0 0 1px var(--line);
+  }
+  .team-card h3{font-size:1.05rem; margin-bottom:2px;}
+  .team-role{
+    display:block; font-size:.78rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--terracotta); margin-bottom:12px;
+  }
+  .team-card p{font-size:.88rem; color:#5C5A4E; margin:0;}
+  .team-lead .team-avatar{width:120px; height:120px; font-size:2.1rem;}
+  @media(max-width:960px){.team-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.team-grid{grid-template-columns:1fr;}}
+
+  .admissions{background:var(--paper-soft);}
+  .steps{display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:44px;}
+  .step{position:relative; padding-top:8px;}
+  .step .line{position:absolute; top:0; left:0; right:-24px; height:2px; background:var(--line);}
+  .step:last-child .line{display:none;}
+  .step .dot{
+    width:14px; height:14px; border-radius:50%; background:var(--ochre);
+    position:absolute; top:-6px; left:0; border:3px solid var(--paper-soft);
+  }
+  .step h4{margin-top:26px; font-size:1.02rem;}
+  .step p{font-size:.9rem; color:#5C5A4E; margin:0;}
+  @media(max-width:860px){
+    .steps{grid-template-columns:1fr 1fr; row-gap:40px;}
+  }
+  @media(max-width:520px){.steps{grid-template-columns:1fr;}}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{
+    background:linear-gradient(120deg, var(--terracotta), #A8451F);
+    color:#fff; text-align:center; padding:70px 0;
+  }
+  .cta-band h2{color:#fff; font-size:clamp(1.7rem,3vw,2.3rem);}
+  .cta-band p{color:#F6DECB; max-width:52ch; margin:0 auto 28px;}
+  .cta-band .btn-primary{background:#fff; color:var(--terracotta);}
+  .cta-band .btn-primary:hover{background:var(--paper);}
+
+  /* ---------- Contact ---------- */
+  .contact .wrap{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .info-list{list-style:none; margin:24px 0 0; padding:0; display:flex; flex-direction:column; gap:18px;}
+  .info-list li{display:flex; gap:14px; align-items:flex-start; font-size:.95rem;}
+  .info-list svg{width:22px; height:22px; flex-shrink:0; color:var(--terracotta); margin-top:2px;}
+  .info-list a{text-decoration:none; font-weight:600; color:var(--forest);}
+  .map-frame{
+    border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); margin-top:28px;
+    height:220px;
+  }
+  .map-frame iframe{width:100%; height:100%; border:0;}
+  .form{
+    background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius); padding:32px;
+  }
+  .form h3{font-size:1.2rem;}
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:.85rem; font-weight:700; margin-bottom:6px; color:var(--forest);}
+  .field input, .field textarea, .field select{
+    width:100%; padding:12px 14px; border-radius:10px; border:1px solid var(--line);
+    background:#fff; font-family:inherit; font-size:.95rem; color:var(--ink);
+  }
+  .field textarea{resize:vertical; min-height:100px;}
+  .field input:focus, .field textarea:focus, .field select:focus{outline:2px solid var(--blue); outline-offset:1px;}
+  .form-note{font-size:.78rem; color:#7A7666; margin-top:14px;}
+  @media(max-width:860px){.contact .wrap{grid-template-columns:1fr;}}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--forest-deep); color:#C9C2AC; padding:56px 0 26px;}
+  .footer-grid{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:48px;}
+  .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:14px;}
+  .footer-brand svg{width:34px;height:34px;}
+  .footer-brand span{font-family:'Fraunces',serif; color:#fff; font-weight:600;}
+  footer h4{color:#fff; font-size:.9rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:16px;}
+  footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:10px;}
+  footer a{text-decoration:none; font-size:.92rem; color:#C9C2AC;}
+  footer a:hover{color:var(--ochre);}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,.1); margin-top:44px; padding-top:22px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:.8rem; color:#8E8874;
+  }
+  @media(max-width:720px){.footer-grid{grid-template-columns:1fr; gap:32px;}}
+
+  /* ---------- Notice Popup ---------- */
+  #notice-popup{
+    position:fixed; inset:0; z-index:200;
+    background:rgba(22,29,23,.55);
+    align-items:center; justify-content:center;
+    padding:20px;
+  }
+  #notice-popup.hidden{display:none;}
+  #notice-popup.flex{display:flex;}
+  .notice-card{
+    background:var(--paper); border-radius:var(--radius);
+    max-width:420px; width:100%; padding:36px 32px 30px;
+    position:relative; box-shadow:0 20px 60px rgba(0,0,0,.3);
+    border:1px solid var(--line);
+    animation:noticeIn .3s ease;
+  }
+  @keyframes noticeIn{
+    from{opacity:0; transform:translateY(12px) scale(.97);}
+    to{opacity:1; transform:translateY(0) scale(1);}
+  }
+  .notice-close{
+    position:absolute; top:14px; right:14px;
+    width:32px; height:32px; border-radius:50%; border:none;
+    background:var(--paper-soft); color:var(--forest);
+    display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:1.1rem; line-height:1;
+  }
+  .notice-close:hover{background:var(--line);}
+  .notice-badge{
+    display:inline-flex; align-items:center; gap:6px;
+    background:var(--ochre); color:var(--forest-deep);
+    font-size:.72rem; font-weight:700; text-transform:uppercase;
+    letter-spacing:.06em; padding:5px 12px; border-radius:100px;
+    margin-bottom:16px;
+  }
+  .notice-card h3{font-size:1.35rem; margin-bottom:10px;}
+  .notice-card p{font-size:.94rem; color:#5C5A4E; margin-bottom:20px;}
+  .notice-card .btn{width:100%; justify-content:center;}
+  @media(prefers-reduced-motion: reduce){
+    .notice-card{animation:none;}
+  }
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+    .float{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Holiday / Admission Notice Popup -->
+<div id="notice-popup" class="hidden" role="dialog" aria-modal="true" aria-labelledby="noticeTitle">
+  <div class="notice-card">
+    <button class="notice-close" id="noticeClose" aria-label="Close notice">&times;</button>
+    <span class="notice-badge">📢 Notice</span>
+    <h3 id="noticeTitle">Admissions Open Now!</h3>
+    <p>Mother's Pride Montessori School is now accepting admissions for this session. Limited seats available for Toddler, Primary, and Elementary programs — visit us on Gramin Road, Lahan today.</p>
+    <a href="#admissions" class="btn btn-primary" id="noticeCta">See Admission Steps</a>
+  </div>
+</div>
+
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand" aria-label="Mother's Pride Montessori School, home">
+      <img src="assets/logo.png" alt="Mother's Pride Montessori School crest" style="width:44px;height:44px;object-fit:contain;">
+      <span class="brand-text">Mother's Pride<span>Montessori School</span></span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#method">Method</a>
+      <a href="#programs">Programs</a>
+      <a href="#life">School Life</a>
+      <a href="#team">Our Team</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#contact" class="nav-cta">Contact Us</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="reveal in">
+        <span class="eyebrow">Gramin Road, Lahan</span>
+        <h1>Where small hands<br>build <em>big</em> minds.</h1>
+        <p class="lead">Mother's Pride Montessori School blends the authentic Montessori method with a warm, family-rooted environment — helping children in Lahan grow into confident, capable, curious learners.</p>
+        <div class="hero-actions">
+          <a href="#admissions" class="btn btn-primary">Begin Admission</a>
+          <a href="#programs" class="btn btn-ghost">Explore Programs</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>3</strong><span>Age-based programs</span></div>
+          <div><strong>1:8</strong><span>Teacher-to-child ratio*</span></div>
+          <div><strong>100%</strong><span>Montessori-inspired classrooms</span></div>
+        </div>
+      </div>
+      <div class="blocks-wrap reveal in">
+        <div class="building-frame float">
+          <img src="assets/sc.jpg" alt="Mother's Pride Montessori School building on Gramin Road, Lahan">
+          <div class="building-badge">Gramin Road, Lahan</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <span>Toddler · Primary · Elementary</span>
+      <span>Certified Montessori-trained staff</span>
+      <span>Nurturing, mixed-age classrooms</span>
+      <span>Serving Lahan &amp; Gramin Road families</span>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Our Story</span>
+        <h2>A school built around the child, not the syllabus.</h2>
+      </div>
+      <div class="reveal">
+        <p>Mother's Pride Montessori School was founded on a simple belief: every child is naturally curious, capable, and eager to learn — when given the right environment. On Gramin Road in the heart of Lahan, we've built classrooms where children move freely, choose purposeful work, and learn at their own pace, guided by trained Montessori educators.</p>
+        <p>We combine the discipline of the Montessori method — practical life, sensorial exploration, language, and mathematics — with genuine care for each family we serve. Small class sizes, real Montessori materials, and a calm, orderly environment help children build independence, focus, and a lifelong love of learning.</p>
+        <div class="about-quote">"Follow the child, and they will show you what they need to grow."</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section class="pillars" id="method">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">The Montessori Method</span>
+        <h2>Three principles guide every classroom.</h2>
+      </div>
+      <div class="pillar-grid">
+        <div class="pillar-card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="10" fill="#E3A335" opacity=".18"/><path d="M14 30V16a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" stroke="#E3A335" stroke-width="2" stroke-linecap="round"/><path d="M18 30v-6h8v6" stroke="#E3A335" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Practical Life</h3>
+          <p>Children practice real, purposeful tasks — pouring, buttoning, cleaning, caring for plants — building independence, coordination, and concentration from the very first day.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="10" fill="#C15A34" opacity=".22"/><circle cx="22" cy="22" r="8" stroke="#C15A34" stroke-width="2"/><circle cx="22" cy="22" r="3" fill="#C15A34"/></svg>
+          <h3>Sensorial Learning</h3>
+          <p>Hands-on Montessori materials refine each sense — sight, sound, touch, and weight — giving children the vocabulary and precision to make sense of the world around them.</p>
+        </div>
+        <div class="pillar-card reveal">
+          <svg class="icon" viewBox="0 0 44 44" fill="none"><rect width="44" height="44" rx="10" fill="#3C6E93" opacity=".2"/><path d="M13 16h18M13 22h18M13 28h11" stroke="#3C6E93" stroke-width="2" stroke-linecap="round"/></svg>
+          <h3>Language &amp; Numeracy</h3>
+          <p>Through phonetic sounds, movable letters, and concrete number materials, children build a natural, joyful bridge from concrete experience to reading, writing, and math.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="programs" id="programs">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Programs by Age</span>
+        <h2>A learning path that grows with your child.</h2>
+      </div>
+      <div class="program-track reveal">
+        <div class="program-card">
+          <span class="stage-num">Stage One</span>
+          <h3>Toddler Community</h3>
+          <span class="age">18 months – 3 years</span>
+          <p>A gentle, secure first step outside home — building language, movement, and early independence in a prepared, child-sized environment.</p>
+          <div class="stage-block" style="background:var(--ochre);"></div>
+        </div>
+        <div class="program-card">
+          <span class="stage-num">Stage Two</span>
+          <h3>Primary (Casa)</h3>
+          <span class="age">3 – 6 years</span>
+          <p>The core Montessori classroom — practical life, sensorial materials, early literacy and numeracy, in mixed-age groups that teach as much as they learn.</p>
+          <div class="stage-block" style="background:var(--terracotta);"></div>
+        </div>
+        <div class="program-card">
+          <span class="stage-num">Stage Three</span>
+          <h3>Lower Elementary</h3>
+          <span class="age">6 – 9 years</span>
+          <p>Curiosity expands into research, storytelling, and collaborative projects, as children move from concrete materials toward abstract reasoning.</p>
+          <div class="stage-block" style="background:var(--blue);"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOOL LIFE / GALLERY -->
+  <section class="gallery" id="life">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">A Day at Mother's Pride</span>
+        <h2>Moments from our classrooms.</h2>
+        <p style="max-width:56ch;color:#5C5A4E;margin-top:10px;">More photos can be added here any time — just drop them into the assets folder.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/summer-camp-1.jpg" alt="Two students smiling at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Summer Camp 2026</span>
+        </div>
+        <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/summer-camp-2.jpg" alt="Students posing with sunglasses at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Good Vibes Only</span>
+        </div>
+        <div class="gallery-card reveal" style="background:linear-gradient(160deg,#3C6E93,#2A5170);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          <span>Sensorial Exploration</span>
+        </div>
+        <div class="gallery-card reveal" style="background:linear-gradient(160deg,#1F3D30,#12251C);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
+          <span>Outdoor Garden Play</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Why Families Choose Us</span>
+        <h2 style="margin-top:.3em;">Not just childcare — a foundation.</h2>
+        <ul class="why-list" style="margin-top:28px;">
+          <li>
+            <span class="num">01</span>
+            <div><h4>Trained Montessori Guides</h4><p>Our teachers are trained in authentic Montessori pedagogy, not just early-childhood care.</p></div>
+          </li>
+          <li>
+            <span class="num">02</span>
+            <div><h4>Small, Mixed-Age Classrooms</h4><p>Children learn from and teach one another, building empathy alongside academics.</p></div>
+          </li>
+          <li>
+            <span class="num">03</span>
+            <div><h4>Local, Family-First Community</h4><p>Rooted in Lahan, we know our families personally and stay closely connected with parents.</p></div>
+          </li>
+          <li>
+            <span class="num">04</span>
+            <div><h4>Safe, Prepared Environment</h4><p>Every material and corner of our classroom is designed to be safe, orderly, and inviting.</p></div>
+          </li>
+        </ul>
+      </div>
+      <div class="why-panel reveal">
+        <h3>A note to parents</h3>
+        <p>Choosing a school is choosing the environment your child will grow in. At Mother's Pride, we treat every child as an individual — never rushed, never held back — and we're always glad to have you visit before deciding.</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Schedule a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team" id="team">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Meet Our Team</span>
+        <h2>The people behind Mother's Pride.</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card team-lead reveal">
+          <div class="team-avatar" style="background:var(--forest);">FN</div>
+          <h3>Founder Name</h3>
+          <span class="team-role">Founder</span>
+          <p>Started Mother's Pride with a vision to bring authentic Montessori education to families in Lahan.</p>
+        </div>
+        <div class="team-card team-lead reveal">
+          <div class="team-avatar" style="background:var(--terracotta);">CN</div>
+          <h3>Coordinator Name</h3>
+          <span class="team-role">Academic Coordinator</span>
+          <p>Oversees classrooms and curriculum, making sure every child's day runs smoothly and purposefully.</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar" style="background:var(--blue);">TN</div>
+          <h3>Teacher Name</h3>
+          <span class="team-role">Primary Guide</span>
+          <p>Leads the Primary classroom, guiding children through practical life and sensorial work.</p>
+        </div>
+        <div class="team-card reveal">
+          <div class="team-avatar" style="background:#8A7A4E;">TN</div>
+          <h3>Teacher Name</h3>
+          <span class="team-role">Toddler Guide</span>
+          <p>Creates a warm, secure first classroom experience for our youngest learners.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section class="admissions" id="admissions">
+    <div class="wrap">
+      <div class="section-head reveal" style="max-width:640px;">
+        <span class="eyebrow">Admissions</span>
+        <h2>Four simple steps to enroll.</h2>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><div class="line"></div><div class="dot"></div>
+          <h4>Visit the School</h4>
+          <p>Tour our Gramin Road campus and meet our teaching team in person.</p>
+        </div>
+        <div class="step reveal"><div class="line"></div><div class="dot"></div>
+          <h4>Submit Application</h4>
+          <p>Fill out the enrollment form with your child's basic details.</p>
+        </div>
+        <div class="step reveal"><div class="line"></div><div class="dot"></div>
+          <h4>Meet &amp; Observe</h4>
+          <p>Your child spends time in the classroom so we can plan their best start.</p>
+        </div>
+        <div class="step reveal"><div class="dot"></div>
+          <h4>Confirm Enrollment</h4>
+          <p>Complete registration and welcome your child to Mother's Pride.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Come see a Montessori classroom in action.</h2>
+      <p>We welcome parents to visit any weekday morning and observe how our children learn, work, and grow together.</p>
+      <a href="#contact" class="btn btn-primary">Book a School Visit</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h2 style="margin-top:.3em;">Visit us on Gramin Road, Lahan.</h2>
+        <p>Have questions about admissions, programs, or a visit? Reach out — we're happy to help.</p>
+        <ul class="info-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Gramin Road, Lahan, Siraha, Madhesh Province, Nepal</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <a href="tel:+977XXXXXXXXXX">+977 XX-XXXXXX <span style="font-weight:400;color:#7A7666;">(add your number)</span></a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 6 10 7 10-7"/></svg>
+            <a href="mailto:info@motherspridemontessori.edu.np">info@motherspridemontessori.edu.np</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Sun – Fri, 9:30 AM – 3:30 PM</span>
+          </li>
+        </ul>
+        <div class="map-frame">
+          <iframe src="https://www.google.com/maps?q=Lahan,Siraha,Nepal&output=embed" loading="lazy" title="Map showing Lahan, Siraha, Nepal" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <form class="form reveal" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+        <h3>Send us a message</h3>
+        <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+        <input type="hidden" name="subject" value="New Admission Inquiry - Mother's Pride Montessori">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+        <div class="field">
+          <label for="parentName">Parent / Guardian Name</label>
+          <input type="text" id="parentName" name="parentName" required>
+        </div>
+        <div class="field">
+          <label for="childAge">Child's Age</label>
+          <input type="text" id="childAge" name="childAge" placeholder="e.g. 3 years">
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell us a little about your child, or ask us a question."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="submitBtn">Send Message</button>
+        <p id="formStatus" role="status" style="font-size:.85rem;margin-top:12px;display:none;"></p>
+        <p class="form-note">We typically reply within 1–2 business days.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Mother's Pride Montessori School crest" style="width:38px;height:38px;">
+          <span>Mother's Pride Montessori School</span>
+        </div>
+        <p style="max-width:34ch;font-size:.9rem;">A Montessori-method school on Gramin Road, Lahan — nurturing independent, curious, capable learners.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#method">Our Method</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#admissions">Admissions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Gramin Road, Lahan, Nepal</li>
+          <li><a href="mailto:info@motherspridemontessori.edu.np">info@motherspridemontessori.edu.np</a></li>
+          <li><a href="#contact">Schedule a Visit →</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Mother's Pride Montessori School. All rights reserved.</span>
+      <span>motherspridemontessori.edu.np</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============================================
+  // NOTICE POPUP SWITCH — change to false to turn off
+  // ============================================
+  const NOTICE_ENABLED = true;
+
+  // Holiday / Admission Notice Popup
+  function showNoticePopup(){
+    if(!NOTICE_ENABLED) return;
+    const popup = document.getElementById('notice-popup');
+    if(!popup) return;
+    // Show once per browser session so it doesn't nag on every page view
+    if(sessionStorage.getItem('noticeShown') === '1') return;
+    setTimeout(() => {
+      popup.classList.remove('hidden');
+      popup.classList.add('flex');
+      sessionStorage.setItem('noticeShown', '1');
+    }, 1800);
+  }
+  function closeNotice(){
+    const popup = document.getElementById('notice-popup');
+    popup.classList.remove('flex');
+    popup.classList.add('hidden');
+  }
+  document.getElementById('noticeClose').addEventListener('click', closeNotice);
+  document.getElementById('noticeCta').addEventListener('click', closeNotice);
+  document.getElementById('notice-popup').addEventListener('click', (e) => {
+    if(e.target.id === 'notice-popup') closeNotice();
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      const popup = document.getElementById('notice-popup');
+      if(!popup.classList.contains('hidden')) closeNotice();
+    }
+  });
+  showNoticePopup();
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Contact form -> Web3Forms (free submission service, no backend needed)
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    status.style.display = 'none';
+
+    try {
+      const formData = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: formData
+      });
+      const result = await res.json();
+
+      if (result.success) {
+        status.textContent = "Thank you! Your message has been sent — we'll get back to you soon.";
+        status.style.color = '#1F3D30';
+        status.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error(result.message || 'Something went wrong.');
+      }
+    } catch (err) {
+      status.textContent = "Sorry, we couldn't send your message. Please email us directly at info@motherspridemontessori.edu.np.";
+      status.style.color = '#C15A34';
+      status.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+</script>
+</body>
+</html>
