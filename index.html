@@ -302,8 +302,25 @@
     background:var(--paper-soft); border:1px solid var(--line); border-radius:var(--radius);
     padding:26px 22px; text-align:center;
   }
+   /* ---------- Team image css ---------- */
+.team-avatar{
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  overflow:hidden;
+  margin:0 auto 18px;
+  border:3px solid var(--paper);
+  box-shadow:0 0 0 1px var(--line);
+}
+
+.team-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:fill;
+}
+/* ---------- Team image css ---------- */
   .team-avatar{
-    width:96px; height:96px; border-radius:50%; margin:0 auto 18px;
+    width:130px; height:130px; border-radius:50%; margin:0 auto 18px;
     display:flex; align-items:center; justify-content:center;
     font-family:'Fraunces',serif; font-weight:600; font-size:1.7rem; color:#fff;
     border:3px solid var(--paper);
@@ -315,7 +332,7 @@
     letter-spacing:.06em; color:var(--terracotta); margin-bottom:12px;
   }
   .team-card p{font-size:.88rem; color:#5C5A4E; margin:0;}
-  .team-lead .team-avatar{width:120px; height:120px; font-size:2.1rem;}
+  .team-lead .team-avatar{width:130px; height:130px; font-size:2.1rem;}
   @media(max-width:960px){.team-grid{grid-template-columns:repeat(2,1fr);}}
   @media(max-width:520px){.team-grid{grid-template-columns:1fr;}}
 
@@ -494,7 +511,7 @@
       </div>
       <div class="blocks-wrap reveal in">
         <div class="building-frame float">
-          <img src="assets/sc.jpg" alt="Mother's Pride Montessori School building on Gramin Road, Lahan">
+          <img src="assets/school.jpg" alt="Mother's Pride Montessori School building on Gramin Road, Lahan">
           <div class="building-badge">Gramin Road, Lahan</div>
         </div>
       </div>
@@ -593,7 +610,24 @@
         <h2>Moments from our classrooms.</h2>
         <p style="max-width:56ch;color:#5C5A4E;margin-top:10px;">More photos can be added here any time — just drop them into the assets folder.</p>
       </div>
+      <!-- Child Club Member   -->
       <div class="gallery-grid">
+        <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/CH.jPG" alt="Two students smiling at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Child Club Member</span>
+        </div>
+        <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/CH GRP1.jpg" alt="Two students smiling at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Child Club Member</span>
+        </div>
+         <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/CH GRP 2.jpg" alt="Two students smiling at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Child Club Member</span>
+        </div>
+        <!-- Summer Camp   -->
         <div class="gallery-card reveal" style="background:#12251C;">
           <img src="assets/summer-camp-1.jpg" alt="Two students smiling at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
@@ -602,16 +636,30 @@
         <div class="gallery-card reveal" style="background:#12251C;">
           <img src="assets/summer-camp-2.jpg" alt="Students posing with sunglasses at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
           <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
-          <span style="position:relative;">Good Vibes Only</span>
+          <span style="position:relative;">Summer Camp 2026</span>
         </div>
-        <div class="gallery-card reveal" style="background:linear-gradient(160deg,#3C6E93,#2A5170);">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
-          <span>Sensorial Exploration</span>
+        <!--    -->
+         <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/scienceexh.jpg" alt="Students posing with sunglasses at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Science Exhibition</span>
         </div>
+         <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/graduation.jpg" alt="Students posing with sunglasses at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Graduation Ceremony</span>
+        </div>
+         <div class="gallery-card reveal" style="background:#12251C;">
+          <img src="assets/teacher group.jpg" alt="Students posing with sunglasses at Mother's Pride Summer Camp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+          <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(15,32,24,.75) 100%);"></div>
+          <span style="position:relative;">Teachers</span>
+        </div>
+        <!-- 
         <div class="gallery-card reveal" style="background:linear-gradient(160deg,#1F3D30,#12251C);">
           <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
           <span>Outdoor Garden Play</span>
         </div>
+      -->
       </div>
     </div>
   </section>
@@ -658,23 +706,30 @@
       </div>
       <div class="team-grid">
         <div class="team-card team-lead reveal">
-          <div class="team-avatar" style="background:var(--forest);">FN</div>
-          <h3>Founder Name</h3>
+          <div class="team-avatar" style="background:var(--forest);"> 
+            <img src="assets/founder.jpg" alt="Founder">
+          </div>
+          <h3>Sandeep Gupta</h3>
           <span class="team-role">Founder</span>
           <p>Started Mother's Pride with a vision to bring authentic Montessori education to families in Lahan.</p>
         </div>
+        <div class="team-card reveal">
+          <div class="team-avatar" style="background:var(--blue);">
+            <img src="assets/viceprinciple.jpg" alt="Vice Principal">
+          </div>
+          <h3>Rani Gupta</h3>
+          <span class="team-role">Vice Principal</span>
+          <p>Leads the Primary classroom, guiding children through practical life and sensorial work.</p>
+        </div>
         <div class="team-card team-lead reveal">
-          <div class="team-avatar" style="background:var(--terracotta);">CN</div>
-          <h3>Coordinator Name</h3>
+          <div class="team-avatar" style="background:var(--terracotta);">
+             <img src="assets/coordinator.jpg" alt="Coordinator">
+          </div>
+          <h3>Poonam Rai</h3>
           <span class="team-role">Academic Coordinator</span>
           <p>Oversees classrooms and curriculum, making sure every child's day runs smoothly and purposefully.</p>
         </div>
-        <div class="team-card reveal">
-          <div class="team-avatar" style="background:var(--blue);">TN</div>
-          <h3>Teacher Name</h3>
-          <span class="team-role">Primary Guide</span>
-          <p>Leads the Primary classroom, guiding children through practical life and sensorial work.</p>
-        </div>
+        
         <div class="team-card reveal">
           <div class="team-avatar" style="background:#8A7A4E;">TN</div>
           <h3>Teacher Name</h3>
